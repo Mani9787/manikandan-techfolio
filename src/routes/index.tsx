@@ -92,6 +92,8 @@ function Index() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [filter, setFilter] = useState("All");
   const [open, setOpen] = useState<Project | null>(null);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState<"ok" | "err" | null>(null);
   const shown = filter === "All" ? projects : projects.filter((p) => p.cat === filter);
 
   return (
