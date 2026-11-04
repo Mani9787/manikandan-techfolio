@@ -363,7 +363,7 @@ function Index() {
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${EMAIL}`} className={`${btnOrange} px-5 py-2.5`}>Email</a>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm font-semibold hover:bg-primary-foreground/10">LinkedIn</a>
+              <a href={LINKEDIN} target="_blank" rel="noopener" referrerPolicy="strict-origin-when-cross-origin" className="rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm font-semibold hover:bg-primary-foreground/10">LinkedIn</a>
               <a href={GITHUB} target="_blank" rel="noreferrer" className="rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm font-semibold hover:bg-primary-foreground/10">GitHub</a>
             </div>
           </div>
