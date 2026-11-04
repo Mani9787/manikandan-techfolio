@@ -372,7 +372,7 @@ function Index() {
             <h3 className="text-xl font-bold">Send a message</h3>
             <p className="text-xs text-muted-foreground">Opens your email app with the message pre-filled.</p>
             {["name", "email", "subject"].map((n) => (
-              <input key={n} required name={n} type={n === "email" ? "email" : "text"} placeholder={n[0].toUpperCase() + n.slice(1)} className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
+              <input key={n} required name={n} type={n === "email" ? "email" : "text"} placeholder={n.charAt(0).toUpperCase() + n.slice(1)} className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
             ))}
             <textarea required name="message" rows={4} placeholder="Message" className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
             <button className={btnOrange}>Send Message</button>
