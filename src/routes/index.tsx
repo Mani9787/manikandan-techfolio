@@ -28,7 +28,7 @@ const EMAIL = "manikandanbalaji121@gmail.com";
 const EMAILJS_SERVICE = "service_yzkzxa5";
 const EMAILJS_TEMPLATE = "template_ym17w2a";
 const EMAILJS_PUBLIC_KEY = "Y1uqGkEINyw6quP02";
-const LINKEDIN = "https://www.linkedin.com/in/manikandan-b-132cc";
+const LINKEDIN = "https://www.linkedin.com/in/manikandan-b-9806cc";
 const GITHUB = "https://github.com/Mani9787";
 
 const nav = ["Home", "About", "Skills", "Services", "Projects", "Experience", "Education", "Contact"];
