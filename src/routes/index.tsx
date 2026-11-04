@@ -380,10 +380,12 @@ function Index() {
                   EMAILJS_SERVICE,
                   EMAILJS_TEMPLATE,
                   {
-                    from_name: String(f.get("name")),
+                    name: String(f.get("name")),
+                    from_email: String(f.get("email")),
                     reply_to: String(f.get("email")),
                     subject: String(f.get("subject")),
                     message: String(f.get("message")),
+                    time: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
                   },
                   EMAILJS_PUBLIC_KEY,
                 );
