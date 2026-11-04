@@ -1,26 +1,75 @@
-# Manikandan Portfolio
+# Manikandan B — Portfolio Website
 
-take this image as an example
+A modern, responsive portfolio showcasing my experience in **Cloud Infrastructure Support**, **AWS Architecture**, and **Structured Technical Authoring (DITA XML / ASD-STE100)**.
 
-This project was built with [Lovable](https://lovable.dev).
+[![Live Portfolio](https://img.shields.io/badge/Live_Site-Visit_Portfolio-orange?style=for-the-badge&logo=googlechrome)](https://manikandan-techfolio.lovable.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/manikandan-b-9806cc)
+[![GitHub](https://img.shields.io/badge/GitHub-Mani9787-181717?style=for-the-badge&logo=github)](https://github.com/Mani9787)
 
-**Live app**: https://manikandan-techfolio.lovable.app
+---
 
-## Build with Lovable
+## 🌐 Live Demo
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f5b19f90-7de4-4fc6-adcc-e62477b4f43f).
+**[https://manikandan-techfolio.lovable.app](https://manikandan-techfolio.lovable.app)**
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+---
 
-## Development
+## 👨‍💻 About Me
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Cloud Infrastructure Support Specialist and Technical Author with a B.Tech in Information Technology and manufacturing quality experience at **Molex** and **TVS Motor Company**. **AWS re/Start Graduate** focused on:
 
-```sh
+- **Cloud Infrastructure:** Secure VPC networks, multi-tier EC2/RDS architectures, S3, and serverless AWS (Lambda, API Gateway, DynamoDB, Bedrock, Textract).
+- **IT & Systems Support:** Linux administration, networking (TCP/IP, DNS, routing, security groups), troubleshooting, and root cause analysis.
+- **Technical Authoring:** DITA XML 1.3, ASD-STE100, REST API specifications, Illustrated Parts Catalogs (IPC), and SOPs.
+
+---
+
+## ✨ Features
+
+- **Filterable project showcase** (All, Cloud, Documentation, AI) with architecture flows and detail views.
+- **Instant resume downloads** — Cloud Infrastructure Support and Technical Author versions.
+- **Working contact form** powered by EmailJS.
+- **Responsive layout** for mobile, tablet, and desktop.
+
+---
+
+## 🛠️ Featured Projects
+
+1. **AWS Three-Tier Secure Web Application** — Custom VPC, NAT Gateway, Nginx reverse proxy, Flask backend, RDS MySQL.
+2. **Serverless AI Resume Scoring & Job Matching** — Lambda, API Gateway, S3 pre-signed uploads, Textract, Bedrock, DynamoDB.
+3. **AI Support Log Analyzer — Docs & REST API Spec** — Modular DITA XML 1.3 docs written to ASD-STE100, published on GitHub Pages.
+4. **Disc Brake Caliper — Service Manual & IPC** — Overhaul manual and parts catalog mapped to an 8-item BOM. ([Repo](https://github.com/Mani9787/automotive-technical-publication) · [Live](https://mani9787.github.io/automotive-technical-publication/))
+5. **AI Mobile Solution for Personalized Healthcare** — Android, Flask REST APIs, BERT symptom analysis (presented at IEEE DSBS).
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework:** TanStack Start / React 19
+- **Styling:** Tailwind CSS v4
+- **Email:** EmailJS (`@emailjs/browser`)
+- **Build tool:** Vite 7
+- **Hosting:** Lovable
+
+---
+
+## 🚀 Local Development
+
+Requires Node.js 18+ (or Bun).
+
+```bash
 git clone <this-repository-url>
 cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+Then open `http://localhost:8080`.
+
+---
+
+## 📬 Contact
+
+- **Email:** [manikandanbalaji121@gmail.com](mailto:manikandanbalaji121@gmail.com)
+- **LinkedIn:** [linkedin.com/in/manikandan-b-9806cc](https://www.linkedin.com/in/manikandan-b-9806cc)
+- **GitHub:** [github.com/Mani9787](https://github.com/Mani9787)
