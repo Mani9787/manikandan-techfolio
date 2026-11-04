@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Serve downloadable resumes through imported Lovable Asset pointers with same-origin download links, keeping uploaded PDFs out of the repository.

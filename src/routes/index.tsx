@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import emailjs from "@emailjs/browser";
 import profile from "@/assets/manikandan-profile.jpg.asset.json";
+import infrastructureResume from "@/assets/manikandan-cloud-infrastructure-support-resume.pdf.asset.json";
+import technicalAuthorResume from "@/assets/manikandan-technical-author-resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,8 +34,8 @@ const LINKEDIN = "https://www.linkedin.com/in/manikandan-b-9806cc";
 const GITHUB = "https://github.com/Mani9787";
 
 const RESUMES = [
-  { label: "Cloud Infrastructure Support Resume", file: "manikandan-cloud-infrastructure-support-resume.pdf" },
-  { label: "Technical Author Resume", file: "manikandan-technical-author-resume.pdf" },
+  { label: "Cloud Infrastructure Support Resume", file: "manikandan-cloud-infrastructure-support-resume.pdf", url: infrastructureResume.url },
+  { label: "Technical Author Resume", file: "manikandan-technical-author-resume.pdf", url: technicalAuthorResume.url },
 ];
 
 
@@ -456,7 +458,7 @@ function Index() {
               {RESUMES.map((r) => (
                 <a
                   key={r.file}
-                  href={`/downloads/${r.file}`}
+                  href={r.url}
                   download={r.file}
                   className="flex items-center justify-between gap-4 rounded-xl border border-border p-4 font-semibold transition hover:border-primary hover:bg-primary-soft"
                 >
