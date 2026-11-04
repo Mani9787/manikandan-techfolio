@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import profile from "@/assets/profile.png";
+import profile from "@/assets/manikandan-profile.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -152,9 +152,10 @@ function Index() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md self-end">
-            <div className="absolute bottom-0 left-1/2 h-[85%] w-[90%] -translate-x-1/2 rounded-t-full bg-highlight" />
-            <div className="float-slow absolute -left-6 top-16 h-20 w-24 rounded-[45%] bg-highlight" />
-            <img src={profile} alt="Manikandan B" width={896} height={1152} className="relative z-10 mx-auto w-[88%]" />
+            <div className="float-slow absolute -left-6 top-16 z-20 h-20 w-24 rounded-[45%] bg-highlight" />
+            <div className="relative z-10 mx-auto h-[440px] w-[90%] overflow-hidden rounded-t-full bg-highlight shadow-card">
+              <img src={profile.url} alt="Manikandan B" className="h-full w-full scale-105 object-cover object-top" />
+            </div>
             <div className="absolute right-0 top-1/3 z-20 flex items-center gap-2 rounded-xl bg-card px-4 py-3 text-card-foreground shadow-card">
               <span className="text-2xl font-extrabold text-primary">4+</span>
               <span className="text-xs leading-tight">Years<br />Experience</span>
@@ -173,7 +174,7 @@ function Index() {
           <div className="relative mx-auto aspect-square w-full max-w-sm">
             <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary" />
             <div className="absolute inset-6 overflow-hidden rounded-full bg-highlight">
-              <img src={profile} alt="" loading="lazy" width={896} height={1152} className="mt-6 w-full" />
+              <img src={profile.url} alt="" loading="lazy" className="h-full w-full scale-105 object-cover object-[center_18%]" />
             </div>
             <span className="absolute -right-2 top-6 h-6 w-6 rounded-full border-2 border-highlight" />
             <span className="absolute bottom-4 left-0 h-4 w-4 rounded-full border-2 border-primary" />
