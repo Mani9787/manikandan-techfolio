@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import emailjs from "@emailjs/browser";
 import profile from "@/assets/manikandan-profile.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -24,6 +25,9 @@ export const Route = createFileRoute("/")({
 });
 
 const EMAIL = "manikandanbalaji121@gmail.com";
+const EMAILJS_SERVICE = "service_yzkzxa5";
+const EMAILJS_TEMPLATE = "template_ym17w2a";
+const EMAILJS_PUBLIC_KEY = "Y1uqGkEINyw6quP02";
 const LINKEDIN = "https://linkedin.com/in/manikandan-b-132cc";
 const GITHUB = "https://github.com/Mani9787";
 
@@ -88,6 +92,8 @@ function Index() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [filter, setFilter] = useState("All");
   const [open, setOpen] = useState<Project | null>(null);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState<"ok" | "err" | null>(null);
   const shown = filter === "All" ? projects : projects.filter((p) => p.cat === filter);
 
   return (
@@ -363,20 +369,44 @@ function Index() {
           </div>
           <form
             className="space-y-4 rounded-3xl bg-secondary p-10"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              const f = new FormData(e.currentTarget);
-              const body = `From: ${f.get("name")} <${f.get("email")}>\n\n${f.get("message")}`;
-              window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(String(f.get("subject")))}&body=${encodeURIComponent(body)}`;
+              const formEl = e.currentTarget;
+              const f = new FormData(formEl);
+              setSending(true);
+              setSent(null);
+              try {
+                await emailjs.send(
+                  EMAILJS_SERVICE,
+                  EMAILJS_TEMPLATE,
+                  {
+                    from_name: String(f.get("name")),
+                    reply_to: String(f.get("email")),
+                    subject: String(f.get("subject")),
+                    message: String(f.get("message")),
+                  },
+                  EMAILJS_PUBLIC_KEY,
+                );
+                setSent("ok");
+                formEl.reset();
+              } catch {
+                setSent("err");
+              } finally {
+                setSending(false);
+              }
             }}
           >
             <h3 className="text-xl font-bold">Send a message</h3>
-            <p className="text-xs text-muted-foreground">Opens your email app with the message pre-filled.</p>
+            <p className="text-xs text-muted-foreground">Delivered straight to Manikandan's inbox.</p>
             {["name", "email", "subject"].map((n) => (
               <input key={n} required name={n} type={n === "email" ? "email" : "text"} placeholder={n.charAt(0).toUpperCase() + n.slice(1)} className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
             ))}
             <textarea required name="message" rows={4} placeholder="Message" className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary" />
-            <button className={btnOrange}>Send Message</button>
+            <button disabled={sending} className={`${btnOrange} disabled:opacity-60`}>
+              {sending ? "Sending…" : "Send Message"}
+            </button>
+            {sent === "ok" && <p className="text-sm font-semibold text-green-600">Message sent — thank you! I'll get back to you soon.</p>}
+            {sent === "err" && <p className="text-sm font-semibold text-red-600">Something went wrong. Please try again or email me directly.</p>}
           </form>
         </div>
       </section>
