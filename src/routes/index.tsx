@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import emailjs from "@emailjs/browser";
 import profile from "@/assets/manikandan-profile.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
