@@ -127,7 +127,7 @@ function Index() {
 
       {/* HERO */}
       <section id="home" className="topo-bg relative bg-primary pt-28 text-primary-foreground">
-        <div className="absolute left-6 top-40 hidden flex-col gap-4 md:flex">
+        <div className="absolute left-6 top-40 hidden flex-col gap-4 2xl:flex">
           {[0, 1, 2, 3, 4].map((i) => <span key={i} className="h-2 w-2 rounded-full bg-primary-foreground/80" />)}
         </div>
         <div className="mx-auto grid max-w-7xl items-end gap-10 px-6 md:grid-cols-2">
