@@ -31,6 +31,12 @@ const EMAILJS_PUBLIC_KEY = "Y1uqGkEINyw6quP02";
 const LINKEDIN = "https://www.linkedin.com/in/manikandan-b-9806cc";
 const GITHUB = "https://github.com/Mani9787";
 
+const RESUMES = [
+  { label: "Cloud Infrastructure Support Resume", file: "manikandan-cloud-infrastructure-support-resume.pdf" },
+  { label: "Technical Author Resume", file: "manikandan-technical-author-resume.pdf" },
+];
+
+
 const nav = ["Home", "About", "Skills", "Services", "Projects", "Experience", "Education", "Contact"];
 
 const skills: { title: string; items: string[] }[] = [
@@ -445,14 +451,21 @@ function Index() {
         <div className="fixed inset-0 z-[60] grid place-items-center bg-foreground/60 p-4" onClick={() => setResumeOpen(false)}>
           <div className="w-full max-w-md rounded-2xl bg-card p-8" onClick={(e) => e.stopPropagation()}>
             <h3 className="text-xl font-extrabold">Choose a resume</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Pick the version that fits the role. I'll send it straight to your inbox.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Pick the version that fits the role — it downloads straight away.</p>
             <div className="mt-6 space-y-3">
-              {["Cloud Infrastructure Support Resume", "Technical Author Resume"].map((r) => (
-                <a key={r} href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Request: ${r}`)}`} className="block rounded-xl border border-border p-4 font-semibold transition hover:border-primary hover:bg-primary-soft">
-                  📄 {r}
+              {RESUMES.map((r) => (
+                <a
+                  key={r.file}
+                  href={`/downloads/${r.file}`}
+                  download={r.file}
+                  className="flex items-center justify-between gap-4 rounded-xl border border-border p-4 font-semibold transition hover:border-primary hover:bg-primary-soft"
+                >
+                  <span>📄 {r.label}</span>
+                  <span className="text-xs font-bold uppercase tracking-wide text-primary">PDF</span>
                 </a>
               ))}
             </div>
+
             <button onClick={() => setResumeOpen(false)} className={`${btnOutline} mt-6`}>Close</button>
           </div>
         </div>
